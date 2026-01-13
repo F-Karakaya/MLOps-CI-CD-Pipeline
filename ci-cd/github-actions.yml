@@ -1,0 +1,46 @@
+
+name: MLOps CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run Tests
+      run: |
+        pytest tests/
+
+    - name: Train Model (Small Run)
+      run: |
+        python training/train.py --data_path data/raw/dataset.csv --params_file hyperparams.yaml
+
+    - name: Evaluate Model
+      run: |
+        python evaluation/evaluate.py
+
+    - name: Register Model (Simulated)
+      run: |
+        python mlflow/register_model.py
+
+    - name: Build Docker Image (Simulated)
+      run: |
+        docker build -t mlops-pipeline:latest .
+        write-output "Docker image built successfully"

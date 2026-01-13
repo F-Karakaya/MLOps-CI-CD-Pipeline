@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Env
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ML/Data
+*.pkl
+*.pth
+*.h5
+*.onnx
+data/raw/*.csv
+data/processed/*.csv
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+mlruns/
+.mlflow/
+
+# Outputs (ignore mostly, but keep folder structure if needed, specific artifacts tracked by outputs/ but gitignoring large stuff is good)
+outputs/logs/*.log
+outputs/temp/
+
+# OS
+Thumbs.db
+Desktop.ini
