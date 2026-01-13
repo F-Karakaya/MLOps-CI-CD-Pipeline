@@ -115,9 +115,13 @@ Generated artifacts are stored in the `outputs/` directory:
 
 ---
 
-👤 **Author**
+## 👤 Author
 
-**Furkan Karakaya**
-AI & Computer Vision Engineer
-📧 se.furkankarakaya@gmail.com
+**Furkan Karakaya**  
+AI & Computer Vision Engineer  
+
+📧 se.furkankarakaya@gmail.com  
+
+---
+
 ⭐ If this project helps your workflow or research, consider starring the repository.
